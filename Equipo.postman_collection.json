@@ -5,38 +5,306 @@
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "43480073"
 	},
-	"item": [
-		{
-			"name": "New Request",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "New Request",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "New Request",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "New Request",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		}
-	]
-}
+		"item": [
+		  {
+			"name": "Partidos",
+			"item": [
+			  {
+				"name": "Obtener todos los partidos",
+				"request": {
+				  "method": "GET",
+				  "header": [
+					{
+					  "key": "Content-Type",
+					  "value": "application/json"
+					}
+				  ],
+				  "url": {
+					"raw": "{{base_url}}/api/partidos",
+					"host": ["{{base_url}}"],
+					"path": ["api", "partidos"]
+				  }
+				}
+			  },
+			  {
+				"name": "Obtener partido por ID",
+				"request": {
+				  "method": "GET",
+				  "header": [
+					{
+					  "key": "Content-Type",
+					  "value": "application/json"
+					}
+				  ],
+				  "url": {
+					"raw": "{{base_url}}/api/partidos/1",
+					"host": ["{{base_url}}"],
+					"path": ["api", "partidos", "1"]
+				  }
+				}
+			  },
+			  {
+				"name": "Crear nuevo partido",
+				"request": {
+				  "method": "POST",
+				  "header": [
+					{
+					  "key": "Content-Type",
+					  "value": "application/json"
+					}
+				  ],
+				  "body": {
+					"mode": "raw",
+					"raw": "{\n  \"fecha\": \"2025-05-20\",\n  \"estadio\": \"Estadio Azteca\",\n  \"equipoLocal\": 1,\n  \"equipoVisita\": 2,\n  \"golesLocal\": 2,\n  \"golesVisita\": 1\n}"
+				  },
+				  "url": {
+					"raw": "{{base_url}}/api/partidos",
+					"host": ["{{base_url}}"],
+					"path": ["api", "partidos"]
+				  }
+				}
+			  },
+			  {
+				"name": "Actualizar partido",
+				"request": {
+				  "method": "PUT",
+				  "header": [
+					{
+					  "key": "Content-Type",
+					  "value": "application/json"
+					}
+				  ],
+				  "body": {
+					"mode": "raw",
+					"raw": "{\n  \"fecha\": \"2025-05-20\",\n  \"estadio\": \"Estadio Azteca Modificado\",\n  \"equipoLocal\": 1,\n  \"equipoVisita\": 3,\n  \"golesLocal\": 3,\n  \"golesVisita\": 2\n}"
+				  },
+				  "url": {
+					"raw": "{{base_url}}/api/partidos/1",
+					"host": ["{{base_url}}"],
+					"path": ["api", "partidos", "1"]
+				  }
+				}
+			  },
+			  {
+				"name": "Eliminar partido",
+				"request": {
+				  "method": "DELETE",
+				  "header": [
+					{
+					  "key": "Content-Type",
+					  "value": "application/json"
+					}
+				  ],
+				  "url": {
+					"raw": "{{base_url}}/api/partidos/1",
+					"host": ["{{base_url}}"],
+					"path": ["api", "partidos", "1"]
+				  }
+				}
+			  },
+			  {
+				"name": "Obtener resultados",
+				"request": {
+				  "method": "GET",
+				  "header": [
+					{
+					  "key": "Content-Type",
+					  "value": "application/json"
+					}
+				  ],
+				  "url": {
+					"raw": "{{base_url}}/api/partidos/resultados",
+					"host": ["{{base_url}}"],
+					"path": ["api", "partidos", "resultados"]
+				  }
+				}
+			  }
+			]
+		  },
+		  {
+			"name": "Jugadores",
+			"item": [
+			  {
+				"name": "Obtener jugadores por equipo",
+				"request": {
+				  "method": "GET",
+				  "header": [
+					{
+					  "key": "Content-Type",
+					  "value": "application/json"
+					}
+				  ],
+				  "url": {
+					"raw": "{{base_url}}/api/jugadores/por-equipo/1",
+					"host": ["{{base_url}}"],
+					"path": ["api", "jugadores", "por-equipo", "1"]
+				  }
+				}
+			  },
+			  {
+				"name": "Crear nuevo jugador",
+				"request": {
+				  "method": "POST",
+				  "header": [
+					{
+					  "key": "Content-Type",
+					  "value": "application/json"
+					}
+				  ],
+				  "body": {
+					"mode": "raw",
+					"raw": "{\n  \"nombre\": \"Jugador Nuevo\",\n  \"posicion\": \"Defensa\",\n  \"dorsal\": 25,\n  \"fechaNac\": \"2000-01-01\",\n  \"nacionalidad\": \"Mexicana\",\n  \"idEquipo\": 1\n}"
+				  },
+				  "url": {
+					"raw": "{{base_url}}/api/jugadores",
+					"host": ["{{base_url}}"],
+					"path": ["api", "jugadores"]
+				  }
+				}
+			  },
+			  {
+				"name": "Actualizar jugador",
+				"request": {
+				  "method": "PUT",
+				  "header": [
+					{
+					  "key": "Content-Type",
+					  "value": "application/json"
+					}
+				  ],
+				  "body": {
+					"mode": "raw",
+					"raw": "{\n  \"nombre\": \"Jugador Actualizado\",\n  \"posicion\": \"Medio\",\n  \"dorsal\": 10,\n  \"fechaNac\": \"2000-01-01\",\n  \"nacionalidad\": \"Mexicana\",\n  \"idEquipo\": 1\n}"
+				  },
+				  "url": {
+					"raw": "{{base_url}}/api/jugadores/1",
+					"host": ["{{base_url}}"],
+					"path": ["api", "jugadores", "1"]
+				  }
+				}
+			  },
+			  {
+				"name": "Eliminar jugador",
+				"request": {
+				  "method": "DELETE",
+				  "header": [
+					{
+					  "key": "Content-Type",
+					  "value": "application/json"
+					}
+				  ],
+				  "url": {
+					"raw": "{{base_url}}/api/jugadores/1",
+					"host": ["{{base_url}}"],
+					"path": ["api", "jugadores", "1"]
+				  }
+				}
+			  }
+			]
+		  },
+		  {
+			"name": "Equipos",
+			"item": [
+			  {
+				"name": "Obtener todos los equipos",
+				"request": {
+				  "method": "GET",
+				  "header": [
+					{
+					  "key": "Content-Type",
+					  "value": "application/json"
+					}
+				  ],
+				  "url": {
+					"raw": "{{base_url}}/api/equipos",
+					"host": ["{{base_url}}"],
+					"path": ["api", "equipos"]
+				  }
+				}
+			  },
+			  {
+				"name": "Obtener equipo por ID",
+				"request": {
+				  "method": "GET",
+				  "header": [
+					{
+					  "key": "Content-Type",
+					  "value": "application/json"
+					}
+				  ],
+				  "url": {
+					"raw": "{{base_url}}/api/equipos/1",
+					"host": ["{{base_url}}"],
+					"path": ["api", "equipos", "1"]
+				  }
+				}
+			  },
+			  {
+				"name": "Total goles por equipo",
+				"request": {
+				  "method": "GET",
+				  "header": [
+					{
+					  "key": "Content-Type",
+					  "value": "application/json"
+					}
+				  ],
+				  "url": {
+					"raw": "{{base_url}}/api/equipos/1/total-goles",
+					"host": ["{{base_url}}"],
+					"path": ["api", "equipos", "1", "total-goles"]
+				  }
+				}
+			  }
+			]
+		  },
+		  {
+			"name": "Estadísticas",
+			"item": [
+			  {
+				"name": "Obtener jugadores con más de X goles",
+				"request": {
+				  "method": "GET",
+				  "header": [
+					{
+					  "key": "Content-Type",
+					  "value": "application/json"
+					}
+				  ],
+				  "url": {
+					"raw": "{{base_url}}/api/estadisticas/jugadores/goles?min=5",
+					"host": ["{{base_url}}"],
+					"path": ["api", "estadisticas", "jugadores", "goles"],
+					"query": [
+					  {
+						"key": "min",
+						"value": "5"
+					  }
+					]
+				  }
+				}
+			  }
+			]
+		  }
+		],
+		"variable": [
+		  {
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"description": "URL base de la API"
+		  }
+		],
+		"event": [
+		  {
+			"listen": "test",
+			"script": {
+			  "exec": [
+				"pm.test(\"Status code is 200\", function () {",
+				"    pm.response.to.have.status(200);",
+				"});"
+			  ],
+			  "type": "text/javascript"
+			}
+		  }
+		]
+	  }
